@@ -37,7 +37,10 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
+<style>
+body {
+  background-color: black;
+}
 .card__title {
   font-size: 100px;
   color: aqua;

@@ -1,5 +1,22 @@
 <script setup>
 import Card from './components/Card.vue'
+import Swiper from 'swiper'
+import { Navigation } from 'swiper/modules'
+// import Swiper and modules styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+window.addEventListener('load', () => {
+  var swiper = new Swiper('.mySwiper', {
+    // Подключение нужных модулей
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  })
+})
 </script>
 
 <template>
@@ -46,7 +63,32 @@ import Card from './components/Card.vue'
         </div>
       </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <div class="container">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="banner-item">
+                <div class="banner-item__row">
+                  <div class="banner-item__content">
+                    <div class="banner-item__logo"></div>
+                    <div class="banner-item__name">
+                      <span> Stan Smith,</span>
+                      Forever!
+                    </div>
+                    <button class="banner-item__button"></button>
+                  </div>
+                  <img src="" alt="" class="banner-item__image" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -85,6 +127,7 @@ body {
 .logo__image {
   flex-shrink: 0;
   margin-right: 16px;
+  margin-left: -16px;
 }
 .logo__name {
   color: #000;
@@ -113,5 +156,27 @@ body {
 }
 .menu__icon--cart {
   stroke: #9b9b9b;
+}
+.menu__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  color: #5c5c5c;
+  font-size: 14px;
+  line-height: normal;
+  text-decoration: none;
+}
+.menu__item + .menu__item {
+  margin-left: 32px;
+}
+.menu__icon {
+  flex-shrink: 0;
+  margin-right: 8px;
 }
 </style>

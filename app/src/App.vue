@@ -6,6 +6,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import ProductsList from './components/ProductsList.vue'
 
 window.addEventListener('load', () => {
   var swiper = new Swiper('.mySwiper', {
@@ -124,37 +125,7 @@ window.addEventListener('load', () => {
               <h2 class="section__title">Все кроссовки</h2>
             </div>
           </div>
-
-          <div class="catalog">
-            <div class="catalog__row">
-              <div class="catalog__item-container">
-                <div class="catalog-item">
-                  <div class="catalog-item__image">
-                    <button class="catalog-item__fav">
-                      <svg>
-                        <use href="./assets/sprite.svg#icon-fav"></use>
-                      </svg>
-                    </button>
-                    <img src="./assets/item.jpg" alt="" />
-                  </div>
-                  <a class="catalog-item__name" href="#">
-                    Мужские Кроссовки Nike Blazer Mid Suede
-                  </a>
-                  <div class="catalog-item__bottom">
-                    <div class="catalog-item__price">
-                      <div class="catalog-item__label">Цена:</div>
-                      <div class="catalog-item__value">12 999 руб.</div>
-                    </div>
-                    <button class="catalog-item__cart">
-                      <svg>
-                        <use href="./assets/sprite.svg#icon-plus"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProductsList />
         </section>
       </div>
     </main>
@@ -300,5 +271,124 @@ body {
 
 .section__head {
   margin-bottom: 36px;
+}
+
+.catalog__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -20px;
+}
+.catalog__item-container {
+  padding: 20px;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+.catalog-item {
+  padding: 22px 30px 32px;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 40px;
+  border: 1px solid #f3f3f3;
+
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.catalog__item-container:hover .catalog-item {
+  box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
+  transform: translateY(-10px);
+}
+.catalog-item__image {
+  position: relative;
+  height: 112px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.catalog-item__fav {
+  position: absolute;
+  top: 9px;
+  left: -3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  background-color: transparent;
+  border-radius: 7px;
+  border: 1px solid #f8f8f8;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+.catalog-item__fav svg {
+  height: 16px;
+  width: 16px;
+  fill: #eaeaea;
+}
+.catalog-item__name {
+  display: inline-flex;
+  margin: 15px 0;
+
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+
+  text-decoration: none;
+}
+.catalog-item__bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.catalog-item__label {
+  color: #bdbdbd;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.catalog-item__value {
+  color: #000;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+}
+.catalog-item__cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  margin-left: 10px;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  background-color: transparent;
+  border-radius: 7px;
+  border: 1px solid black;
+
+  background: #fff;
+  cursor: pointer;
+}
+.catalog-item__cart svg {
+  height: 16px;
+  width: 16px;
+  fill: black;
 }
 </style>

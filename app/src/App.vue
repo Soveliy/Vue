@@ -7,6 +7,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import ProductsList from './components/ProductsList.vue'
+import FlyBasket from './components/FlyBasket.vue'
 
 window.addEventListener('load', () => {
   var swiper = new Swiper('.mySwiper', {
@@ -22,6 +23,7 @@ window.addEventListener('load', () => {
 
 <template>
   <div class="wrapper">
+    <FlyBasket />
     <header class="header">
       <div class="container">
         <div class="header__row">

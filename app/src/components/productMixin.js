@@ -2,7 +2,8 @@ export default {
   data() {
     return {
       products: [],
-      cart: []
+      cart: [],
+      showCart: false
     }
   },
   mounted() {
@@ -32,6 +33,10 @@ export default {
       return this.cart.some(function (item) {
         return item.id === product.id
       })
+    },
+    closeCart() {
+      this.showCart = !this.showCart
+      document.body.classList.toggle('is-hidden', this.showCart)
     }
   }
 }
